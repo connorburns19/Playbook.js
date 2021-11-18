@@ -4,9 +4,10 @@ const log = console.log;
 log("Express server");
 
 const express = require("express");
+const path = require("path");
 const app = express();
 
-app.use(express.static(path.join(__dirname, "pub")));
+app.use(express.static(path.join(__dirname, "/pub")));
 
 app.get("/", (req, res) => {
   // sending a string
