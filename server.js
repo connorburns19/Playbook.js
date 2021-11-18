@@ -6,7 +6,7 @@ log("Express server");
 const express = require("express");
 const app = express();
 
-app.use(express.static(path.join(__dirname, "/pub")));
+app.use(express.static(path.join(__dirname, "pub")));
 
 app.get("/", (req, res) => {
   // sending a string
