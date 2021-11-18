@@ -14,7 +14,9 @@ app.get("/", (req, res) => {
   //res.send('This should be the root route!')
 
   //sending some HTML
-  res.send("<h1>This should be the root route!</h1>");
+  res.send(
+    "<h1>Welcome to FbPlaybook Sample Page. go to https://fbplaybooksample.herokuapp.com/examples.html to see the library in action.</h1>"
+  );
 });
 
 // Error codes
