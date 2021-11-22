@@ -1,0 +1,123 @@
+.pages-container {
+  width: 1000px;
+  height: 600px;
+  display: flex;
+  background-color: white;
+  border-radius: 10%;
+}
+.page-item {
+  background-color: grey;
+  border: 2px solid green;
+  padding: 20px;
+  font-size: 30px;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border-radius: 10%;
+}
+.task-bar {
+  background-color: rgb(128, 128, 128);
+
+  width: 100%;
+  height: 3.5%;
+}
+.left-button {
+  float: left;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: green;
+}
+.right-button {
+  float: right;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: green;
+}
+.page-content {
+  margin-top: 25px;
+  width: 100%;
+  height: 95%;
+  background-color: grey;
+  align-items: center;
+  align-content: center;
+  border-radius: 10%;
+}
+.page-image {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10%;
+}
+
+.page-image2 {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10%;
+}
+
+.title {
+  width: 20%;
+  height: 5%;
+  display: flex;
+  margin-bottom: 10px;
+  font-size: large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.page-title {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  text-align-last: center;
+  background-color: green;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-radius: 30%;
+}
+.link-button-container {
+  width: 100%;
+  height: 20px;
+  align-items: center;
+}
+.link-button {
+  align-items: center;
+  text-align-last: center;
+  display: flex;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: green;
+}
+
+.form-box {
+  margin-left: 200px;
+  margin-top: 50px;
+  width: 600px;
+  height: 80px;
+  border: 2px solid green;
+  background-color: grey;
+  border-radius: 1%;
+  align-content: center;
+}
+
+.forms {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+.form-title {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  text-align-last: center;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.spacer {
+  height: 200px;
+}
+.outer-text {
+  margin-top: 100px;
+  padding-bottom: 100px;
+  text-align-last: center;
+
+  font-size: xx-large;
+}
+.center {
+  margin: 0 auto;
+}
