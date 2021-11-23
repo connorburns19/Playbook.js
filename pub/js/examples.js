@@ -35,7 +35,8 @@ text.innerText =
   "The next use case: You are devloping for a football coach, \
 however they want the view of the Playbook to be different for the team captain. \
 They are able to add new plays to the Playbook so that the coach can view them after and approve them. In this case, as the devloper,\
-you create a Playbook Object and call the allowUserCreatePlays method so that the captain can create new plays.";
+you create a Playbook Object and call the allowUserCreatePlays method so that the captain can create new plays. (in order to add a play properly\
+    you need to put a direct web link to an image as well as a video link ie. youtube)";
 body.append(text);
 
 const book2 = new playBook("New York Giants Plays");
@@ -70,5 +71,5 @@ text2.innerText =
   to see.";
 body.append(text2);
 
-const field = new Field();
-field.makeTFormation();
+const fieldGen = new FieldGenerator();
+fieldGen.makeTFormation();

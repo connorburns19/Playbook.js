@@ -6,7 +6,6 @@ function playBook(title) {
   this.title = document.createElement("div");
   this.title.className = "title";
   this.title.innerText = title;
-  console.log(this.pages);
 
   const default1 = document.createElement("div");
   default1.className = "page-content";
@@ -66,9 +65,6 @@ function playBook(title) {
   }
   $(forward_button).click(
     function () {
-      console.log("I" + this.i);
-      console.log(this.pages.length);
-
       if (this.pages.length === 3 && this.i != this.pages.length - 1) {
         this.page1.removeChild(this.page1.lastChild);
         this.page2.removeChild(this.page2.lastChild);
@@ -79,14 +75,10 @@ function playBook(title) {
         this.i < this.pages.length - 2 &&
         this.pages.length % 2 == 0
       ) {
-        console.log("I" + this.i);
-        console.log("test");
         this.page1.removeChild(this.page1.lastChild);
         this.page2.removeChild(this.page2.lastChild);
-        console.log("fire");
+
         this.i += 2;
-        console.log(this.page1.lastChild);
-        console.log(this.page2.lastChild);
 
         this.page1.appendChild(this.pages[this.i]);
         this.page2.appendChild(this.pages[this.i + 1]);
@@ -95,14 +87,10 @@ function playBook(title) {
         this.i < this.pages.length - 1 &&
         this.pages.length % 2 != 0
       ) {
-        console.log("I" + this.i);
-        console.log("test");
         this.page1.removeChild(this.page1.lastChild);
         this.page2.removeChild(this.page2.lastChild);
-        console.log("fire");
+
         this.i += 2;
-        console.log(this.page1.lastChild);
-        console.log(this.page2.lastChild);
 
         this.page1.appendChild(this.pages[this.i]);
         if (this.pages[this.i + 1] != null) {
@@ -113,13 +101,11 @@ function playBook(title) {
   );
   $(back_button).click(
     function () {
-      console.log("I" + this.i);
-      console.log(this.pages.length);
       if (this.pages.length === 3 && this.i === 2) {
         this.page1.removeChild(this.page1.lastChild);
 
         this.i -= 2;
-        console.log("here1");
+
         this.page1.appendChild(this.pages[this.i]);
         this.page2.appendChild(this.pages[this.i + 1]);
       } else if (
@@ -127,14 +113,10 @@ function playBook(title) {
         this.i - 2 >= 0 &&
         this.pages.length % 2 == 0
       ) {
-        console.log("test");
         this.page1.removeChild(this.page1.lastChild);
         this.page2.removeChild(this.page2.lastChild);
-        console.log("fire");
+
         this.i -= 2;
-        console.log("here2");
-        console.log(this.page1.lastChild);
-        console.log(this.page2.lastChild);
 
         this.page1.appendChild(this.pages[this.i]);
         this.page2.appendChild(this.pages[this.i + 1]);
@@ -146,15 +128,11 @@ function playBook(title) {
         if (this.i === this.pages.length - 1) {
           this.page1.removeChild(this.page1.lastChild);
         } else {
-          console.log("epic");
           this.page1.removeChild(this.page1.lastChild);
           this.page2.removeChild(this.page2.lastChild);
         }
 
         this.i -= 2;
-        console.log("here3");
-        console.log(this.page1.lastChild);
-        console.log(this.page2.lastChild);
 
         this.page1.appendChild(this.pages[this.i]);
         this.page2.appendChild(this.pages[this.i + 1]);
@@ -231,8 +209,6 @@ playBook.prototype = {
     formbox.appendChild(forms);
     body.append(formbox);
 
-    console.log(this);
-    console.log(this.addPage);
     $(submit).click(
       function (e) {
         e.preventDefault();
@@ -241,18 +217,16 @@ playBook.prototype = {
         if (this.i === this.pages.length - 2) {
           this.page2.appendChild(this.pages[this.i + 1]);
         }
-
-        console.log(this.pages);
       }.bind(this)
     );
   },
 };
 
-function Field() {
+function FieldGenerator() {
   this.fields = [];
 }
 
-Field.prototype = {
+FieldGenerator.prototype = {
   makeTFormation: function () {
     const field = document.createElement("div");
     //Note: Created the image in Figma, and exported as SVG code This section will likely completely change in order to work for animations
