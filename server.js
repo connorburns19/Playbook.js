@@ -1,3 +1,6 @@
+//Note: I copied alot of the code from the week 8 lecture as you can see. So just want to clarify
+// that is the source where I grabbed the skeleton for this server file.
+
 /* server.js - Express server*/
 "use strict";
 const log = console.log;
