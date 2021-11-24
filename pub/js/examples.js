@@ -24,7 +24,7 @@ book1.addPage(
   "https://youtu.be/qyqCTMirNWg?t=191"
 );
 book1.addPage(
-  "https://lh3.googleusercontent.com/proxy/PEgmaYfJiVz8yJu3VTXlHvAeDcm6JmsO6-3VhrNZq2BeDrnfEmPwFespwIZZiwh89STBhArIpuNUO5W7zlS3fjuFIomYFMYJQp0PLHmbCE3jd7INfoCKYkte-Xbwd4j_wxjL3CXKDVcBTkWKMw",
+  "https://upload.wikimedia.org/wikipedia/commons/d/dc/Yost_tackle_over_lea.jpg",
   "End Around",
   "https://youtu.be/qyqCTMirNWg?t=211"
 );
