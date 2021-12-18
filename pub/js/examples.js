@@ -3,6 +3,9 @@
 const body = $("body");
 
 const book1 = new playBook("New York Giants Plays");
+
+
+
 book1.addPage(
   "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
   "QB Sneak",
@@ -71,5 +74,15 @@ text2.innerText =
   to see.";
 body.append(text2);
 
-const fieldGen = new FieldGenerator();
-fieldGen.makeTFormation();
+
+
+
+const field = new PlayDisplayer();
+field.setLTEMove('deep-90-right')
+field.setRTEMove('mid-90-left')
+field.setRTMove('short-90-left')
+// field.setLHBMove('hole-four-lhb')
+// field.setRHBMove('hole-eight-rhb')
+field.setQBMove('pass-qb')
+field.setFBMove('hole-four-fb')
+
