@@ -2,6 +2,7 @@
 
 function playBook(title, field) {
   this.field = field
+  this.plays = [];
   this.pages = [];
   this.i = 0;
   this.title = document.createElement("div");
@@ -142,7 +143,9 @@ function playBook(title, field) {
   );
 }
 playBook.prototype = {
-  addPage: function (image, title, link) {
+  addPage: function (image, title, link, movelist) {
+    
+    
     const newpage = document.createElement("div");
     newpage.className = "page-content";
     const img = document.createElement("img");
@@ -163,6 +166,8 @@ playBook.prototype = {
       linkbutton.type = "button";
       linkbutton.innerText = "Open Video";
 
+
+
       const linked = document.createElement("a");
       linked.href = link;
       linked.target = "_blank";
@@ -170,7 +175,117 @@ playBook.prototype = {
       linkcontainer.appendChild(linked);
 
       newpage.appendChild(linkcontainer);
+      
+
     }
+    const display = document.createElement("button")
+    display.className = "link-button";
+    display.type = "button";
+    display.innerText = "Initialize Play";
+    newpage.appendChild(display)
+    $(display).click(
+      function (e) {
+        e.preventDefault();
+
+        this.field.fieldtop.innerText = title
+        const lte = generateMove(movelist[0], this.field.size)[0]
+        console.log(lte)
+        if (lte == undefined){
+          this.field.ltemove = []
+        }
+        else{
+          this.field.ltemove = lte.steps
+
+        }
+
+        const lt = generateMove(movelist[1], this.field.size)[0]
+        if (lt == undefined){
+          this.field.ltmove = []
+        }
+        else{
+          this.field.ltmove = generateMove(movelist[1], this.field.size)[0].steps
+
+        }
+        const lg = generateMove(movelist[2], this.field.size)[0]
+        if (lg == undefined){
+          this.field.lgmove = []
+        }
+        else{
+          this.field.lgmove = generateMove(movelist[2], this.field.size)[0].steps
+
+        }
+        const c = generateMove(movelist[3], this.field.size)[0]
+        if (c == undefined){
+          this.field.cmove = []
+        }
+        else{
+          this.field.cmove = generateMove(movelist[3], this.field.size)[0].steps
+
+        }
+        const rg = generateMove(movelist[4], this.field.size)[0]
+        if (rg == undefined){
+          this.field.rgmove = []
+        }
+        else{
+          this.field.rgmove = generateMove(movelist[4], this.field.size)[0].steps
+
+        }
+        const rt = generateMove(movelist[5], this.field.size)[0]
+        if (rt == undefined){
+          this.field.rtmove = []
+        }
+        else{
+          this.field.rtmove = generateMove(movelist[5], this.field.size)[0].steps
+
+        }
+        
+        const rte = generateMove(movelist[6], this.field.size)[0]
+        if (rte == undefined){
+          this.field.rtemove = []
+        }
+        else{
+          this.field.rtemove = generateMove(movelist[6], this.field.size)[0].steps
+
+        }
+        const qb = generateMove(movelist[7], this.field.size)[0]
+        if (qb == undefined){
+          this.field.qbmove = []
+        }
+        else{
+          this.field.qbmove = generateMove(movelist[7], this.field.size)[0].steps
+
+        }
+        const lhb = generateMove(movelist[8], this.field.size)[0]
+        if (lhb == undefined){
+          this.field.lhbmove = []
+        }
+        else{
+          this.field.lhbmove = generateMove(movelist[8], this.field.size)[0].steps
+
+        }
+        const fb = generateMove(movelist[9], this.field.size)[0]
+        if (fb == undefined){
+          this.field.fbmove = []
+        }
+        else{
+          this.field.fbmove = generateMove(movelist[9], this.field.size)[0].steps
+
+        }
+        const rhb = generateMove(movelist[10], this.field.size)[0]
+        if (rhb == undefined){
+          this.field.rhbmove = []
+        }
+        else{
+          this.field.rhbmove = generateMove(movelist[10], this.field.size)[0].steps
+
+        }
+        
+  
+
+
+        
+      }.bind(this)
+    );
 
     this.pages.push(newpage);
   },
@@ -204,7 +319,7 @@ playBook.prototype = {
     forms.appendChild(formlink);
     forms.appendChild(submit);
     formboxtitle.className = "form-title";
-    formboxtitle.innerText = "Add Plays";
+    formboxtitle.innerText = "Save Current Play";
     formbox.className = "form-box";
     formbox.appendChild(formboxtitle);
     formbox.appendChild(forms);
@@ -365,7 +480,7 @@ function PlayDisplayer(size, name){
     backline.className = 'mid-back'
     field.className = 'field'
     this.lte.classList.add('player')
-    this.lte.classList.add('lte')
+    
     this.lt.classList.add('player')
     this.rhb.classList.add('player')
     this.fb.classList.add('player')
@@ -385,7 +500,7 @@ function PlayDisplayer(size, name){
     backline.className = 'mid-back-x-large'
     field.className = 'field-x-large'
     this.lte.classList.add('player-x-large')
-    this.lte.classList.add('lte')
+    
     this.lt.classList.add('player-x-large')
     this.rhb.classList.add('player-x-large')
     this.fb.classList.add('player-x-large')
@@ -406,7 +521,7 @@ function PlayDisplayer(size, name){
     backline.className = 'mid-back-large'
     field.className = 'field-large'
     this.lte.classList.add('player-large')
-    this.lte.classList.add('lte')
+    
     this.lt.classList.add('player-large')
     this.rhb.classList.add('player-large')
     this.fb.classList.add('player-large')

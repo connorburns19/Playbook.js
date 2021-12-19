@@ -78,15 +78,15 @@ text2.id = 'text'
 
 
 
-// const field = new PlayDisplayer('xx-large', 'one');
-// field.setLTEMove('deep-90-right')
-// field.setRTEMove('mid-90-left')
-// field.setRTMove('short-90-left')
-// // field.setLHBMove('hole-four-lhb')
-// // field.setRHBMove('hole-eight-rhb')
-// field.setQBMove('pass-qb')
-// field.setFBMove('hole-four-fb')
-// field.spawnSandbox('text')
+const field = new PlayDisplayer('xx-large', 'one');
+field.setLTEMove('deep-90-right')
+field.setRTEMove('mid-90-left')
+field.setRTMove('short-90-left')
+// field.setLHBMove('hole-four-lhb')
+// field.setRHBMove('hole-eight-rhb')
+field.setQBMove('pass-qb')
+field.setFBMove('hole-four-fb')
+field.spawnSandbox('text')
 
 
 const field2 = new PlayDisplayer('large', 'HailMary');
@@ -98,38 +98,30 @@ field2.setRTMove('short-90-right')
 field2.setQBMove('pass-qb')
 field2.setFBMove('hole-five-fb')
 field2.spawnSandbox(true)
-const book1 = new playBook("New York Giants Plays");
+const book1 = new playBook("", field2);
 
 
 
 book1.addPage(
-  "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
-  "QB Sneak",
-  "https://youtu.be/qyqCTMirNWg?t=86"
+  "https://i.ibb.co/kSFmpZV/Hail-Mary-Out.png",
+  "Hail Mary Out",
+  "https://youtu.be/qyqCTMirNWg?t=289",
+  ['straight-deep', 'mid-90-left', 'none', 'none', 'none', 'mid-90-right', 'straight-deep', 'pass-qb', 'none', 'hole-four-fb', 'none']
 );
 book1.addPage(
-  "https://bestflagfootballplays.com/wp-content/uploads/Hail-Mary-Trips.jpg",
-  "Hail Mary",
-  "https://youtu.be/qyqCTMirNWg?t=289"
+  "https://i.ibb.co/vsRPBKF/Left-Handoff-FB.png",
+  "Left Handoff FB",
+  null,
+  ['none', 'none', 'none', 'none', 'none', 'none', 'none', 'hand-off-left-qb', 'hole-one-lhb', 'hole-two-fb', 'hole-five-rhb']
 );
 book1.addPage(
-  "https://www.dummies.com/wp-content/uploads/283523.image0.jpg",
-  "Handoff",
-  "https://youtu.be/qyqCTMirNWg?t=108"
-);
-book1.addPage(
-  "https://lh6.googleusercontent.com/-r311fMqwGdQ/TXHLNj4yb2I/AAAAAAAARAE/lVNOIrGbpPA/s1600/Boise+St.+Hook+and+Lateral+Play2.png",
-  "Lateral",
-  "https://youtu.be/qyqCTMirNWg?t=191"
-);
-book1.addPage(
-  "https://upload.wikimedia.org/wikipedia/commons/d/dc/Yost_tackle_over_lea.jpg",
-  "End Around",
-  "https://youtu.be/qyqCTMirNWg?t=211"
+  "https://i.ibb.co/xhpXQV7/Criss-Cross.png",
+  "CrissCross",
+  null,
+  ['hole-eight-rhb', 'none', 'none', 'none', 'none', 'none', 'hole-one-fb', 'pass-1b', 'none', 'hole-six-rhb', 'none']
 );
 
-field2.connectPlaybook(book1)
-book1.connectField(field2)
+book1.allowUserCreatePlays()
 
 
 
