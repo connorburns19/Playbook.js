@@ -23,12 +23,17 @@
 }
 .left-button {
   float: left;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  background-color: green;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 .right-button {
   float: right;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+.save-button {
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: green;
 }
 .page-content {

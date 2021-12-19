@@ -18,7 +18,7 @@ function playBook(title, field) {
   image1.src = "https://i.ibb.co/hyx1q6c/playbook.png";
   const image2 = document.createElement("img");
   image2.className = "page-image2";
-  image2.src = "https://i.ibb.co/Yjzfyg3/yuhhh.png";
+  image2.src = "https://i.ibb.co/7YhctXj/instructions.png";
   default1.appendChild(image1);
   default2.appendChild(image2);
   this.pages.push(default1);
@@ -34,8 +34,114 @@ function playBook(title, field) {
   back_button.className = "left-button";
   back_button.type = "button";
   back_button.innerText = "Flip Back";
-
+  const save_button = document.createElement("button")
+  save_button.className = "save-button";
+  save_button.type = "button";
   taskbar.appendChild(back_button);
+  if (this.field != null){
+    save_button.innerText = "Save Custom Play to book"
+    taskbar.appendChild(save_button)
+    $(save_button).click(
+      function (e) {
+        e.preventDefault();
+        
+
+        let lte = this.field.ltemove[0]
+        if (lte == undefined){
+          lte = 'none'
+        }
+        else{
+          lte = this.field.ltemove[0].name
+        }
+        let lt = this.field.ltmove[0]
+        if (lt == undefined){
+          lt = 'none'
+        }
+        else{
+          lt = this.field.ltmove[0].name
+        }
+        let lg = this.field.lgmove[0]
+        if (lg == undefined){
+          lg = 'none'
+        }
+        else{
+          lg = this.field.lgmove[0].name
+        }
+        let c = this.field.cmove[0]
+        if (c == undefined){
+          c = 'none'
+        }
+        else{
+          c = this.field.cmove[0].name
+        }
+        let rg = this.field.rgmove[0]
+        if (rg == undefined){
+          rg = 'none'
+        }
+        else{
+          rg = this.field.rgmove[0].name
+        }
+        let rt = this.field.rtmove[0]
+        if (rt == undefined){
+          rt = 'none'
+        }
+        else{
+          rt = this.field.rtmove[0].name
+        }
+        let rte = this.field.rtemove[0]
+        if (rte == undefined){
+          rte = 'none'
+        }
+        else{
+          rte = this.field.rtemove[0].name
+        }
+        let qb = this.field.qbmove[0]
+        if (qb == undefined){
+          qb = 'none'
+        }
+        else{
+          qb = this.field.qbmove[0].name
+        }
+        let lhb = this.field.lhbmove[0]
+        if (lhb == undefined){
+          lhb = 'none'
+        }
+        else{
+          lhb = this.field.lhbmove[0].name
+        }
+        let fb = this.field.fbmove[0]
+        if (fb == undefined){
+          fb = 'none'
+        }
+        else{
+          fb = this.field.fbmove[0].name
+        }
+        let rhb = this.field.rhbmove[0]
+        console.log(rhb)
+        if (rhb == undefined){
+          rhb = 'none'
+        }
+        else{
+          rhb = this.field.rhbmove[0].name
+        }
+        
+
+        const list = [lte, lt, lg, c, rg, rt, rte, qb, lhb, fb, rhb]
+        console.log(list)
+        this.addPage('https://i.ibb.co/cbrDg02/grey.png', this.field.fieldtop.innerText, null, list)
+
+        
+  
+
+
+        
+      }.bind(this)
+    );
+
+  }
+
+
+  
   taskbar.appendChild(this.title);
 
   this.page1.appendChild(taskbar);
@@ -144,6 +250,7 @@ function playBook(title, field) {
 }
 playBook.prototype = {
   addPage: function (image, title, link, movelist) {
+    console.log(movelist)
     
     
     const newpage = document.createElement("div");
@@ -178,7 +285,8 @@ playBook.prototype = {
       
 
     }
-    const display = document.createElement("button")
+    if (this.field != undefined){
+      const display = document.createElement("button")
     display.className = "link-button";
     display.type = "button";
     display.innerText = "Initialize Play";
@@ -286,6 +394,10 @@ playBook.prototype = {
         
       }.bind(this)
     );
+
+
+    }
+    
 
     this.pages.push(newpage);
   },
@@ -448,7 +560,7 @@ function PlayDisplayer(size, name){
   field.append(backline)
   const playbutton = document.createElement('button')
   playbutton.type = "button";
-  playbutton.innerText = 'Play'
+  playbutton.innerText = 'Play Animation'
   const resetbutton = document.createElement('button')
   resetbutton.type = "button";
   resetbutton.innerText = 'Reset'
@@ -727,7 +839,7 @@ PlayDisplayer.prototype = {
     const submit = document.createElement("input");
     submit.id = "confirmid" + this.name;
     submit.type = "submit";
-    submit.value = "Confirm";
+    submit.value = "Confirm Animations";
 
     forms.append(submit)
     
@@ -779,11 +891,11 @@ PlayDisplayer.prototype = {
     const submit2 = document.createElement("input");
     submit.id = "submitid" + this.name;
     submit2.type = "submit";
-    submit2.value = "Add Current Play";
+    submit2.value = "Set Custom Name";
 
     formsaddcurrentplay.appendChild(formtitle);
-    formsaddcurrentplay.appendChild(formimage);
-    formsaddcurrentplay.appendChild(formlink);
+    // formsaddcurrentplay.appendChild(formimage);
+    // formsaddcurrentplay.appendChild(formlink);
     formsaddcurrentplay.appendChild(submit2);
     if (edit){
       shell.append(formsaddcurrentplay)
