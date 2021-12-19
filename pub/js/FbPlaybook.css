@@ -127,8 +127,8 @@
   position: relative;
   text-align-last: center;
   font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif
-  float: bottom;
+  font-family: Arial, Helvetica, sans-serif;
+  /* float: bottom; */
 }
 .spacer {
   height: 200px;
