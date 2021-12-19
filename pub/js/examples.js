@@ -121,7 +121,7 @@ book1.addPage(
   ['hole-eight-rhb', 'none', 'none', 'none', 'none', 'none', 'hole-one-fb', 'pass-1b', 'none', 'hole-six-rhb', 'none']
 );
 
-// book1.allowUserCreatePlays()
+book1.allowUserCreatePlays()
 
 
 

@@ -130,6 +130,10 @@ function playBook(title, field) {
         console.log(list)
         this.addPage('https://i.ibb.co/cbrDg02/grey.png', this.field.fieldtop.innerText, null, list)
 
+        if (this.i === this.pages.length - 2) {
+          this.page2.appendChild(this.pages[this.i + 1]);
+        }
+
         
   
 
