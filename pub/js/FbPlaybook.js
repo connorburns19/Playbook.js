@@ -1,6 +1,7 @@
 "use strict";
 
-function playBook(title) {
+function playBook(title, field) {
+  this.field = field
   this.pages = [];
   this.i = 0;
   this.title = document.createElement("div");
@@ -490,6 +491,10 @@ function PlayDisplayer(size, name){
 
 PlayDisplayer.prototype = {
 
+  connectPlaybook: function(playBook){
+    this.playBook = playBook
+  },
+
   spawnSandbox: function (edit){
     
     const body = $('body')
@@ -669,6 +674,12 @@ PlayDisplayer.prototype = {
       shell.append(formsaddcurrentplay)
 
     }
+    $(submit2).click(
+      function (e) {
+        e.preventDefault();
+        this.fieldtop.innerText = formtitle.value
+      }.bind(this)
+    );
     
 
 

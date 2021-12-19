@@ -128,6 +128,8 @@ book1.addPage(
   "https://youtu.be/qyqCTMirNWg?t=211"
 );
 
+field2.connectPlaybook(book1)
+book1.connectField(field2)
 
 
 
