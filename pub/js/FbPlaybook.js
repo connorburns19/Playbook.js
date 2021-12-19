@@ -47,82 +47,91 @@ function playBook(title, field, parentid) {
         
 
         let lte = this.field.ltemove[0]
+        // console.log(lte).length
         if (lte == undefined){
           lte = 'none'
         }
+        // else if (lte.length > 1){
+        //   lte = this.field.ltename
+        // }
         else{
-          lte = this.field.ltemove[0].name
+          lte = this.field.ltename
+          // lte = this.field.ltemove[0].name
+          // console.log(this.field.ltemove[0])
+          // console.log(lte)
         }
+
+
         let lt = this.field.ltmove[0]
         if (lt == undefined){
           lt = 'none'
         }
         else{
-          lt = this.field.ltmove[0].name
+          lt = this.field.ltname
         }
         let lg = this.field.lgmove[0]
         if (lg == undefined){
           lg = 'none'
         }
         else{
-          lg = this.field.lgmove[0].name
+          lg = this.field.lgname
         }
         let c = this.field.cmove[0]
         if (c == undefined){
           c = 'none'
         }
         else{
-          c = this.field.cmove[0].name
+          c = this.field.cname
         }
         let rg = this.field.rgmove[0]
         if (rg == undefined){
           rg = 'none'
         }
         else{
-          rg = this.field.rgmove[0].name
+          rg = this.field.rgname
         }
         let rt = this.field.rtmove[0]
         if (rt == undefined){
           rt = 'none'
         }
         else{
-          rt = this.field.rtmove[0].name
+          rt = this.field.rtname
         }
         let rte = this.field.rtemove[0]
         if (rte == undefined){
           rte = 'none'
         }
         else{
-          rte = this.field.rtemove[0].name
+          rte = this.field.rtename
         }
         let qb = this.field.qbmove[0]
         if (qb == undefined){
           qb = 'none'
         }
         else{
-          qb = this.field.qbmove[0].name
+          qb = this.field.qbname
         }
         let lhb = this.field.lhbmove[0]
         if (lhb == undefined){
           lhb = 'none'
         }
         else{
-          lhb = this.field.lhbmove[0].name
+          lhb = this.field.lhbname
         }
         let fb = this.field.fbmove[0]
         if (fb == undefined){
           fb = 'none'
         }
         else{
-          fb = this.field.fbmove[0].name
+          fb = this.field.fbname
         }
         let rhb = this.field.rhbmove[0]
-        console.log(rhb)
+        // console.log(rhb)
         if (rhb == undefined){
           rhb = 'none'
         }
         else{
-          rhb = this.field.rhbmove[0].name
+          rhb = this.field.rhbname
         }
         
 
@@ -310,7 +319,7 @@ playBook.prototype = {
 
         this.field.fieldtop.innerText = title
         const lte = generateMove(movelist[0], this.field.size)[0]
-        console.log(lte)
+        // console.log(lte)
         if (lte == undefined){
           this.field.ltemove = []
         }
@@ -445,7 +454,7 @@ playBook.prototype = {
     forms.appendChild(formlink);
     forms.appendChild(submit);
     formboxtitle.className = "form-title";
-    formboxtitle.innerText = "Save Current Play";
+    formboxtitle.innerText = "Save Custom Play with Image and Video";
     formbox.className = "form-box";
     formbox.appendChild(formboxtitle);
     formbox.appendChild(forms);
@@ -464,8 +473,104 @@ playBook.prototype = {
     $(submit).click(
       function (e) {
         e.preventDefault();
+        let lte = this.field.ltemove[0]
+        // console.log(lte).length
+        if (lte == undefined){
+          lte = 'none'
+        }
+        // else if (lte.length > 1){
+        //   lte = this.field.ltename
+        // }
+        else{
+          lte = this.field.ltename
+          // lte = this.field.ltemove[0].name
+          // console.log(this.field.ltemove[0])
+          // console.log(lte)
+        }
 
-        this.addPage(formimage.value, formtitle.value, formlink.value);
+
+        let lt = this.field.ltmove[0]
+        if (lt == undefined){
+          lt = 'none'
+        }
+        else{
+          lt = this.field.ltname
+        }
+        let lg = this.field.lgmove[0]
+        if (lg == undefined){
+          lg = 'none'
+        }
+        else{
+          lg = this.field.lgname
+        }
+        let c = this.field.cmove[0]
+        if (c == undefined){
+          c = 'none'
+        }
+        else{
+          c = this.field.cname
+        }
+        let rg = this.field.rgmove[0]
+        if (rg == undefined){
+          rg = 'none'
+        }
+        else{
+          rg = this.field.rgname
+        }
+        let rt = this.field.rtmove[0]
+        if (rt == undefined){
+          rt = 'none'
+        }
+        else{
+          rt = this.field.rtname
+        }
+        let rte = this.field.rtemove[0]
+        if (rte == undefined){
+          rte = 'none'
+        }
+        else{
+          rte = this.field.rtename
+        }
+        let qb = this.field.qbmove[0]
+        if (qb == undefined){
+          qb = 'none'
+        }
+        else{
+          qb = this.field.qbname
+        }
+        let lhb = this.field.lhbmove[0]
+        if (lhb == undefined){
+          lhb = 'none'
+        }
+        else{
+          lhb = this.field.lhbname
+        }
+        let fb = this.field.fbmove[0]
+        if (fb == undefined){
+          fb = 'none'
+        }
+        else{
+          fb = this.field.fbname
+        }
+        let rhb = this.field.rhbmove[0]
+        // console.log(rhb)
+        if (rhb == undefined){
+          rhb = 'none'
+        }
+        else{
+          rhb = this.field.rhbname
+        }
+        
+
+        const list = [lte, lt, lg, c, rg, rt, rte, qb, lhb, fb, rhb]
+        console.log(list)
+        this.addPage(formimage.value, formtitle.value, formlink.value, list)
+
+        if (this.i === this.pages.length - 2) {
+          this.page2.appendChild(this.pages[this.i + 1]);
+        }
+
+        // this.addPage(formimage.value, formtitle.value, formlink.value);
         if (this.i === this.pages.length - 2) {
           this.page2.appendChild(this.pages[this.i + 1]);
         }
@@ -596,17 +701,36 @@ function PlayDisplayer(size, name, parentid){
 
   //Hardcode play to start
   this.ltemove = []
+  this.ltename = 'none'
+
   this.ltmove = []
+  this.ltname = 'none'
+
   this.lgmove = []
+  this.lgname = 'none'
+
   this.cmove = []
+  this.cname = 'none'
+
   this.rgmove = []
+  this.rgname = 'none'
   this.rtmove = []
+  this.rtname = 'none'
+
   this.rtemove = []
+  this.rtename = 'none'
   this.qbmove = []
+  this.qbname = 'none'
   this.lhbmove = []
+  this.lhbname = 'none'
+
   this.fbmove = []
+  this.fbname = 'none'
+
   this.rhbmove = []
+  this.rhbname = 'none'
   this.rtemove = []
+  this.rtename = 'none'
 
   /////////Styles///////////
   if(this.size === 'xx-large'){
@@ -679,8 +803,8 @@ function PlayDisplayer(size, name, parentid){
 
   $(playbutton).click(
     function () {
-      console.log('success')
-      console.log(this.lte)
+      // console.log('success')
+      // console.log(this.lte)
       // $('#lte').animate(lteanimate.obj, lteanimate.speed)
       animateinsequence(this.ltemove, '#lte' + this.name)
       animateinsequence(this.ltmove, '#lt' + this.name)
@@ -969,6 +1093,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.ltemove = newmove[0].steps
+      this.ltename = newmove[0].name
 
     }
     
@@ -981,6 +1106,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.ltmove = newmove[0].steps
+      this.ltname = newmove[0].name
 
     }
     
@@ -992,6 +1118,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.lgmove = newmove[0].steps
+      this.lgname = newmove[0].name
 
     }
     
@@ -1003,6 +1130,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.cmove = newmove[0].steps
+      this.cname = newmove[0].name
 
     }
     
@@ -1014,6 +1142,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.rgmove = newmove[0].steps
+      this.rgname = newmove[0].name
 
     }
     
@@ -1025,6 +1154,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.rtmove = newmove[0].steps
+      this.rtname = newmove[0].name
 
     }
     
@@ -1036,6 +1166,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.rtemove = newmove[0].steps
+      this.rtename = newmove[0].name
 
     }
     
@@ -1047,6 +1178,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.qbmove = newmove[0].steps
+      this.qbname = newmove[0].name
 
     }
     
@@ -1058,6 +1190,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.lhbmove = newmove[0].steps
+      this.lhbname = newmove[0].name
 
     }
     
@@ -1069,6 +1202,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.fbmove = newmove[0].steps
+      this.fbname = newmove[0].name
 
     }
     
@@ -1080,6 +1214,7 @@ PlayDisplayer.prototype = {
     }
     else{
       this.rhbmove = newmove[0].steps
+      this.rhbname = newmove[0].name
 
     }
     
@@ -1163,8 +1298,10 @@ function generateMove(move, size){
   if (size === 'xx-large'){
     const moveslist = getValidMoveList()
     const newmove = moveslist.filter(m => m.name === move)
+    console.log(newmove)
   
     return newmove
+    
 
   }
 
