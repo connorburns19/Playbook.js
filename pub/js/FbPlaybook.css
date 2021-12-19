@@ -4,6 +4,7 @@
   display: flex;
   background-color: white;
   border-radius: 10%;
+  margin-bottom: 100px;
 }
 .page-item {
   background-color: lightslategrey;
@@ -114,6 +115,7 @@
 .forms2 {
   width: 165px;
   height: 200%;
+  font-size:15px
   
   
   
@@ -134,7 +136,7 @@
 .outer-text {
   margin-top: 100px;
   padding-bottom: 100px;
-  text-align-last: center;
+  /* text-align-last: center; */
 
   font-size: xx-large;
 }
@@ -209,6 +211,7 @@
   width: 1220px;
   height: 235px;
   display: flex;
+  margin-top: 20px;
 }
 
 
@@ -224,7 +227,7 @@
 .field-large{
   background-color: green;
   width: 854px;
-  height: 154px;
+  height: 161px;
   
   
   /* display: flex; */
@@ -279,6 +282,7 @@
   width: 854px;
   height: 235px;
   display: flex;
+  margin-top: 20px;
 }
 
 

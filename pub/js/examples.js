@@ -42,7 +42,7 @@ you create a Playbook Object and call the allowUserCreatePlays method so that th
     you need to put a direct web link to an image as well as a video link ie. youtube)";
 body.append(text);
 
-const book2 = new playBook("");
+const book2 = new playBook("", null, 'yuh');
 book2.addPage(
   "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
   "QB Sneak",
@@ -89,7 +89,7 @@ field.setFBMove('hole-four-fb')
 field.spawnSandbox('text')
 
 
-const field2 = new PlayDisplayer('large', 'Offence');
+const field2 = new PlayDisplayer('large', 'Offence', 'yuh');
 field2.setLTEMove('deep-90-right')
 field2.setRTEMove('mid-90-left')
 field2.setRTMove('short-90-right')
@@ -97,7 +97,7 @@ field2.setRTMove('short-90-right')
 // field.setRHBMove('hole-eight-rhb')
 field2.setQBMove('pass-qb')
 field2.setFBMove('hole-five-fb')
-field2.spawnSandbox(true)
+field2.spawnSandbox(true, 'yuh')
 const book1 = new playBook("", field2);
 
 

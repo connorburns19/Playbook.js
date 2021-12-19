@@ -1,6 +1,6 @@
 "use strict";
 
-function playBook(title, field) {
+function playBook(title, field, parentid) {
   this.field = field
   this.plays = [];
   this.pages = [];
@@ -166,8 +166,17 @@ function playBook(title, field) {
   bookdiv2.appendChild(this.page2);
 
   taskbar2.appendChild(this.title);
-  const body = $("body");
-  body.append(bookdiv2);
+  const body = $('body')
+  
+  if (parentid == undefined){
+    body.append(bookdiv2);
+
+  }
+  else{
+    const par = document.getElementById(parentid)
+    par.append(bookdiv2)
+  }
+  
 
   if (this.page1.children.length === 1) {
     this.page1.appendChild(this.pages[this.i]);
@@ -405,8 +414,9 @@ playBook.prototype = {
 
     this.pages.push(newpage);
   },
-  allowUserCreatePlays: function () {
+  allowUserCreatePlays: function (parentid) {
     const body = $("body");
+    
     const formbox = document.createElement("div");
     formbox.hidden = false;
 
@@ -439,7 +449,17 @@ playBook.prototype = {
     formbox.className = "form-box";
     formbox.appendChild(formboxtitle);
     formbox.appendChild(forms);
-    body.append(formbox);
+
+    if (parentid == undefined){
+      body.append(formbox);
+  
+    }
+    else{
+      const par = document.getElementById(parentid)
+      par.append(formbox)
+    }
+
+    
 
     $(submit).click(
       function (e) {
@@ -454,7 +474,7 @@ playBook.prototype = {
   },
 };
 
-function PlayDisplayer(size, name){
+function PlayDisplayer(size, name, parentid){
   this.size = size
   this.name = name
   const fieldtop = document.createElement("div")
@@ -712,8 +732,20 @@ function PlayDisplayer(size, name){
   );
 
   const body = $("body");
-  body.append(fieldtop)
-  body.append(field)
+  
+  if (parentid == undefined){
+    body.append(fieldtop)
+    body.append(field);
+    
+
+  }
+  else{
+    const par = document.getElementById(parentid)
+    par.append(fieldtop)
+    par.append(field)
+  }
+  
+  
 
   
 
@@ -726,9 +758,12 @@ PlayDisplayer.prototype = {
     this.playBook = playBook
   },
 
-  spawnSandbox: function (edit){
+  spawnSandbox: function (edit, parentid){
     
     const body = $('body')
+    // if (parentid != undefined){
+    //   body = $(parentid)[0]
+    // }
     
     
 
@@ -849,7 +884,17 @@ PlayDisplayer.prototype = {
     
     shell.append(forms)
 
-    body.append(shell)
+    if (parentid == undefined){
+      body.append(shell)
+      
+  
+    }
+    else{
+      const par = document.getElementById(parentid)
+      par.append(shell)
+     
+    }
+    
 
     $(submit).click(
       function (e) {
