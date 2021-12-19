@@ -1,6 +1,6 @@
 "use strict";
 
-function playBook(title, field, parentid) {
+function playBook(title, field, bool, parentid) {
   this.field = field
   this.plays = [];
   this.pages = [];
@@ -33,12 +33,12 @@ function playBook(title, field, parentid) {
   const back_button = document.createElement("button");
   back_button.className = "left-button";
   back_button.type = "button";
-  back_button.innerText = "Flip Back";
+  back_button.innerText = "Back";
   const save_button = document.createElement("button")
   save_button.className = "save-button";
   save_button.type = "button";
   taskbar.appendChild(back_button);
-  if (this.field != null){
+  if (this.field != null && bool){
     save_button.innerText = "Save Custom Play to book"
     taskbar.appendChild(save_button)
     $(save_button).click(
@@ -168,7 +168,7 @@ function playBook(title, field, parentid) {
   const forward_button = document.createElement("button");
   forward_button.className = "right-button";
   forward_button.type = "button";
-  forward_button.innerText = "Flip Forward";
+  forward_button.innerText = "Forward";
   taskbar2.appendChild(this.title);
   taskbar2.appendChild(forward_button);
   this.page2.appendChild(taskbar2);
@@ -454,7 +454,7 @@ playBook.prototype = {
     forms.appendChild(formlink);
     forms.appendChild(submit);
     formboxtitle.className = "form-title";
-    formboxtitle.innerText = "Save Custom Play with Image and Video";
+    formboxtitle.innerText = "Save Custom Play";
     formbox.className = "form-box";
     formbox.appendChild(formboxtitle);
     formbox.appendChild(forms);
@@ -854,19 +854,23 @@ function PlayDisplayer(size, name, parentid){
 
     .bind(this)
   );
-
+  const fullfield = document.createElement('div')
+  fullfield.append(fieldtop)
+  fullfield.append(field)
   const body = $("body");
   
   if (parentid == undefined){
-    body.append(fieldtop)
-    body.append(field);
+    // body.append(fieldtop)
+    // body.append(field);
+    body.append(fullfield)
     
 
   }
   else{
     const par = document.getElementById(parentid)
-    par.append(fieldtop)
-    par.append(field)
+    // par.append(fieldtop)
+    // par.append(field)
+    par.append(fullfield)
   }
   
   

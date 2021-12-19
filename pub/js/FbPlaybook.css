@@ -2,7 +2,7 @@
   width: 800px;
   height: 500px;
   display: flex;
-  background-color: white;
+  
   border-radius: 10%;
   margin-bottom: 100px;
 }
@@ -147,6 +147,66 @@
   
  
 }
+.spacer2 {
+  
+}
+.landing-page{
+  background-color: rgb(216, 175, 99);
+}
+
+.landing-title{
+  font-size: 1000%;
+  /* width: 60%; */
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  
+
+}
+.documentaiton {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  margin: auto;
+  width: 60%;
+
+}
+
+.explanation-block {
+  margin-top: 150px;
+  text-align: center;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 150px;
+}
+.code {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: thistle;
+  font-size: large;
+  
+}
+.landing-sub-title{
+  font-size: 300%;
+  /* width: 50%; */
+  padding: 10px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  
+
+}
+.showcase{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.showcasedsandbox{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .field-top{
   background-color: green;
   width: 1220px;
@@ -279,10 +339,12 @@
 
 .sandbox-large {
   background-color:lightslategrey;
-  width: 854px;
-  height: 235px;
+  /* width: 854px; */
+  
+  /* height: 235px; */
+  
   display: flex;
-  margin-top: 20px;
+  
 }
 
 

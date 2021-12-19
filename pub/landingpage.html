@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="js/FbPlaybook.css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src='js/FbPlaybook.js'></script>
+    <script defer type="text/javascript" src='js/landingpage.js'></script>
+
+</head>
+
+<body class="landing-page">
+
+    <div class='landing-title'>
+        FbPlaybook.js
+    </div>
+    <div class='landing-sub-title'>
+        Create, save, and view fluid American Football play animations!
+    </div>
+    <div class='documentaiton'>
+        <a href='https://www.youtube.com/watch?v=P046r4jq-Gg'>Documentaiton</a>
+    </div>
+    <div class='explanation-block'>
+        The first functionality provided by this library is the ability to create Playbooks, that the end user can flip
+        through and look at. The developer can provide a name, field object, a boolean to signify if the user can save
+        plays, and an id for an html element for which the
+        object will be inserted into. Since we are creating a standalone Playbook, we set the field argument to null and
+        the boolean to false.
+        The book starts with no pages,
+        so the user is unable to flip at this point:
+
+    </div>
+
+    <div class='code'>
+        const book = new playBook("Sample", null, false, someid);
+    </div>
+    <div class='showcase' id='standalonebook'>
+    </div>
+
+    <div class='explanation-block'>
+        You can now add plays as such. Below is an example of how to add one page, however this book below has four:
+    </div>
+
+
+    <div class='code'>
+        book.addPage(
+        "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png", "QB Sneak",
+        "https://youtu.be/qyqCTMirNWg?t=86");
+    </div>
+
+    <div class='showcase' id='bookwithplays'>
+    </div>
+
+    <div class='explanation-block'>
+        Now for the interesting part. The devloper can also create PlayDisplayer objects which can showcase animations.
+        It takes in a size, name, and id of the element for which it should be inserted.
+        When the displayer is initially created, there will be no animation:
+    </div>
+
+    <div class='code'>
+        const field = new PlayDisplayer('large', 'Offence', someid);
+    </div>
+
+    <div class='showcase' id='fieldnoanimation'>
+    </div>
+
+    <div class='explanation-block'>
+        The developer can now set a default play. They do this setting the move for each position manually, using a list
+        of predefined legal moves. See documentation for the list of legal moves. It is important that every field has a
+        different name, so this one is called Offence2 now.
+    </div>
+
+    <div class='code'>
+        field.setLTEMove('deep-90-right');
+    </div>
+    <div class='code'>
+        field.setRTEMove('mid-90-left');
+    </div>
+    <div class='code'>
+        field.setQBMove('pass-qb');
+    </div>
+    <div class='code'>
+        field.setRTMove('short-90-right');
+    </div>
+    <div class='code'>
+        field.setFBMove('hole-five-fb');
+    </div>
+
+    <div class='showcase' id='fieldanimation'>
+    </div>
+
+    <div class='explanation-block'>
+        The developer can also create a code sandbox for the end user to play with. We have not connected a field to a
+        playBook yet, so all the end user can do is play around with animations; they are not able to save any in this
+        case. We call this method with null because that is a boolean to allow saving plays.
+    </div>
+    <div class='code'>
+        field.spawnSandbox(null, someid);
+    </div>
+
+    <div class='showcase' id='fieldsandbox'>
+    </div>
+    <div class='showcase' id='fieldsandbox2'>
+    </div>
+
+    <div class='explanation-block'>
+        We can also create and connect a playbook to the play displayer, by creating a new playbook and passing the play
+        displayer object as an attribute. The developer can then add plays to the playbook for the end user to view the
+        animations. The new
+        attribute to the addPage method is a list of legal move names for each player, in order of the formation left to
+        right (LTE, LT LG
+        C, RB, RT, RTE, QB, LHB, FB, RHB). Flip to the play you want to see, click Initialize Play, then click Play
+        Animation:
+    </div>
+
+    <div class='code'>
+        const field2 = new PlayDisplayer('large', 'Connected', someid);
+    </div>
+    <div class='code'>
+        const connectedbook = new playBook("Connected", field4, false, someid);
+    </div>
+    <div class='code'>
+        connectedbook.addPage("https://i.ibb.co/kSFmpZV/Hail-Mary-Out.png", "Hail Mary
+        Out","https://youtu.be/qyqCTMirNWg?t=289", ['straight-deep', 'mid-90-left', 'none', 'none', 'none',
+        'mid-90-right', 'straight-deep', 'pass-qb', 'none', 'hole-four-fb', 'none']
+        );
+    </div>
+
+
+    <div class='showcase' id='fieldsandboxplaybook'>
+    </div>
+
+    <div class='explanation-block'>
+        We can also allow the user to create plays without images or links and add them to the playbook, we do this by
+        signifying this by setting the boolean to true when
+        we create the book before adding the pages. We also call spawnSandbox with the boolean set to true to allow the
+        user to change the name of the play before saving.
+
+    </div>
+
+    <div class='code'>
+        const connectedbook2 = new playBook("Connected", field4, true, someid);
+
+
+    </div>
+    <div class='code'>
+        connectedbook.addPage("https://i.ibb.co/kSFmpZV/Hail-Mary-Out.png", "Hail Mary
+        Out","https://youtu.be/qyqCTMirNWg?t=289", ['straight-deep', 'mid-90-left', 'none', 'none', 'none',
+        'mid-90-right', 'straight-deep', 'pass-qb', 'none', 'hole-four-fb', 'none']
+        );
+
+    </div>
+    <div class='code'>
+        field2.spawnSandbox(true, someid)
+
+    </div>
+    <div class='code'>
+
+    </div>
+    <div class='code'>
+
+    </div>
+    <div class='showcase' id='fieldsandboxplaybooksave'>
+    </div>
+    <div class='spacer2'>
+        -
+    </div>
+    <div class='showcase' id='fieldsandboxplaybooksave2'>
+    </div>
+
+    <div class='explanation-block'>
+        Finally, we additionally allow the end user to save plays and supply an image link and video link as well if
+        they want.
+        We do that like this.
+
+    </div>
+
+    <div class='code'>
+
+    </div>
+    <div class='code'>
+
+    </div>
+    <div class='code'>
+
+    </div>
+    <div class='code'>
+
+    </div>
+    <div class='code'>
+        connectedbook2.allowUserCreatePlays(someid)
+    </div>
+
+    <div class='showcase' id='fieldsandboxplaybooksave3'>
+    </div>
+    <div class='showcase' id='fieldsandboxplaybooksave4'>
+    </div>
+
+    <div class='explanation-block'>
+        NOTE: There is another playDisplayer size called xx-large, but it is bery big:
+
+    </div>
+    <div class='code'>
+        const big = new PlayDisplayer('xx-large', 'Large', someid)
+
+    </div>
+    <div class='showcase' id='big'>
+    </div>
+
+
+</body>
+
+</html>
