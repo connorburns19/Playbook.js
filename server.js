@@ -17,11 +17,11 @@ app.get("/", (req, res) => {
   //res.send('This should be the root route!')
 
   //sending some HTML
-  // res.send(
-  //    "<h1>Welcome to FbPlaybook Sample Page. go to https://fbplaybooksample.herokuapp.com/examples.html to see the library in action.</h1>"
+  res.send(
+     "<h1>Welcome to FbPlaybook.js. Go to https://fbplaybooksample.herokuapp.com/landingpage.html to see the library in action.</h1>"
     
-  // );
-  res.sendFile("/landingpage.html")
+  );
+  // res.sendFile("/landingpage.html")
 });
 
 // Error codes
