@@ -78,7 +78,7 @@ text2.id = 'text'
 
 
 
-const field = new PlayDisplayer('small', 'one');
+const field = new PlayDisplayer('xx-large', 'one');
 field.setLTEMove('deep-90-right')
 field.setRTEMove('mid-90-left')
 field.setRTMove('short-90-left')
@@ -89,7 +89,7 @@ field.setFBMove('hole-four-fb')
 field.spawnSandbox('text')
 
 
-const field2 = new PlayDisplayer('small', 'two');
+const field2 = new PlayDisplayer('large', 'two');
 field2.setLTEMove('deep-90-right')
 field2.setRTEMove('mid-90-left')
 field2.setRTMove('short-90-right')
@@ -97,6 +97,8 @@ field2.setRTMove('short-90-right')
 // field.setRHBMove('hole-eight-rhb')
 field2.setQBMove('pass-qb')
 field2.setFBMove('hole-five-fb')
+field2.spawnSandbox()
+
 
 
 
