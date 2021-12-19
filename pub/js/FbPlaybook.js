@@ -226,6 +226,7 @@ function PlayDisplayer(size, name){
   this.size = size
   this.name = name
   const fieldtop = document.createElement("div")
+  this.fieldtop = fieldtop
   
   
   const field = document.createElement("div")
@@ -337,6 +338,9 @@ function PlayDisplayer(size, name){
   resetbutton.innerText = 'Reset'
   field.append(playbutton)
   field.append(resetbutton)
+  
+  fieldtop.innerText = this.name
+  
 
   //Hardcode play to start
   this.ltemove = []
@@ -486,7 +490,7 @@ function PlayDisplayer(size, name){
 
 PlayDisplayer.prototype = {
 
-  spawnSandbox: function (){
+  spawnSandbox: function (edit){
     
     const body = $('body')
     
@@ -496,6 +500,7 @@ PlayDisplayer.prototype = {
     shell.className = 'sandbox'
 
     const forms = document.createElement("forms2");
+    const formsaddcurrentplay = document.createElement("forms2");
     forms.className = "forms2";
     forms.id = "sandboxform" + this.name;
     const LTE = document.createElement("select")
@@ -624,6 +629,7 @@ PlayDisplayer.prototype = {
         this.setLHBMove(LHB.value)
         this.setFBMove(FB.value)
         this.setRHBMove(RHB.value)
+        this.fieldtop.innerText = 'Sandbox'
       }.bind(this)
     );
 
@@ -637,6 +643,33 @@ PlayDisplayer.prototype = {
       forms.className = "forms2";
 
     }
+
+    const formtitle = document.createElement("input");
+    formtitle.id = "titleid " + this.name;
+    formtitle.type = "text";
+    formtitle.placeholder = "Name of play";
+    const formimage = document.createElement("input");
+    formimage.id = "imageid" + this.name;
+    formimage.type = "text";
+    formimage.placeholder = "Link to image";
+    const formlink = document.createElement("input");
+    formlink.id = "linkid" + this.name;
+    formlink.type = "text";
+    formlink.placeholder = "Link to video";
+    const submit2 = document.createElement("input");
+    submit.id = "submitid" + this.name;
+    submit2.type = "submit";
+    submit2.value = "Add Current Play";
+
+    formsaddcurrentplay.appendChild(formtitle);
+    formsaddcurrentplay.appendChild(formimage);
+    formsaddcurrentplay.appendChild(formlink);
+    formsaddcurrentplay.appendChild(submit2);
+    if (edit){
+      shell.append(formsaddcurrentplay)
+
+    }
+    
 
 
 

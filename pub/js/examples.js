@@ -2,35 +2,35 @@
 
 const body = $("body");
 
-const book1 = new playBook("New York Giants Plays");
+// const book1 = new playBook("New York Giants Plays");
 
 
 
-book1.addPage(
-  "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
-  "QB Sneak",
-  "https://youtu.be/qyqCTMirNWg?t=86"
-);
-book1.addPage(
-  "https://bestflagfootballplays.com/wp-content/uploads/Hail-Mary-Trips.jpg",
-  "Hail Mary",
-  "https://youtu.be/qyqCTMirNWg?t=289"
-);
-book1.addPage(
-  "https://www.dummies.com/wp-content/uploads/283523.image0.jpg",
-  "Handoff",
-  "https://youtu.be/qyqCTMirNWg?t=108"
-);
-book1.addPage(
-  "https://lh6.googleusercontent.com/-r311fMqwGdQ/TXHLNj4yb2I/AAAAAAAARAE/lVNOIrGbpPA/s1600/Boise+St.+Hook+and+Lateral+Play2.png",
-  "Lateral",
-  "https://youtu.be/qyqCTMirNWg?t=191"
-);
-book1.addPage(
-  "https://upload.wikimedia.org/wikipedia/commons/d/dc/Yost_tackle_over_lea.jpg",
-  "End Around",
-  "https://youtu.be/qyqCTMirNWg?t=211"
-);
+// book1.addPage(
+//   "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
+//   "QB Sneak",
+//   "https://youtu.be/qyqCTMirNWg?t=86"
+// );
+// book1.addPage(
+//   "https://bestflagfootballplays.com/wp-content/uploads/Hail-Mary-Trips.jpg",
+//   "Hail Mary",
+//   "https://youtu.be/qyqCTMirNWg?t=289"
+// );
+// book1.addPage(
+//   "https://www.dummies.com/wp-content/uploads/283523.image0.jpg",
+//   "Handoff",
+//   "https://youtu.be/qyqCTMirNWg?t=108"
+// );
+// book1.addPage(
+//   "https://lh6.googleusercontent.com/-r311fMqwGdQ/TXHLNj4yb2I/AAAAAAAARAE/lVNOIrGbpPA/s1600/Boise+St.+Hook+and+Lateral+Play2.png",
+//   "Lateral",
+//   "https://youtu.be/qyqCTMirNWg?t=191"
+// );
+// book1.addPage(
+//   "https://upload.wikimedia.org/wikipedia/commons/d/dc/Yost_tackle_over_lea.jpg",
+//   "End Around",
+//   "https://youtu.be/qyqCTMirNWg?t=211"
+// );
 
 const text = document.createElement("div");
 text.className = "outer-text";
@@ -78,18 +78,18 @@ text2.id = 'text'
 
 
 
-const field = new PlayDisplayer('xx-large', 'one');
-field.setLTEMove('deep-90-right')
-field.setRTEMove('mid-90-left')
-field.setRTMove('short-90-left')
-// field.setLHBMove('hole-four-lhb')
-// field.setRHBMove('hole-eight-rhb')
-field.setQBMove('pass-qb')
-field.setFBMove('hole-four-fb')
-field.spawnSandbox('text')
+// const field = new PlayDisplayer('xx-large', 'one');
+// field.setLTEMove('deep-90-right')
+// field.setRTEMove('mid-90-left')
+// field.setRTMove('short-90-left')
+// // field.setLHBMove('hole-four-lhb')
+// // field.setRHBMove('hole-eight-rhb')
+// field.setQBMove('pass-qb')
+// field.setFBMove('hole-four-fb')
+// field.spawnSandbox('text')
 
 
-const field2 = new PlayDisplayer('large', 'two');
+const field2 = new PlayDisplayer('large', 'HailMary');
 field2.setLTEMove('deep-90-right')
 field2.setRTEMove('mid-90-left')
 field2.setRTMove('short-90-right')
@@ -97,7 +97,36 @@ field2.setRTMove('short-90-right')
 // field.setRHBMove('hole-eight-rhb')
 field2.setQBMove('pass-qb')
 field2.setFBMove('hole-five-fb')
-field2.spawnSandbox()
+field2.spawnSandbox(true)
+const book1 = new playBook("New York Giants Plays");
+
+
+
+book1.addPage(
+  "https://bestyouthfootballplays.com/wp-content/uploads/10-QB-Sneak-I-630x512.png",
+  "QB Sneak",
+  "https://youtu.be/qyqCTMirNWg?t=86"
+);
+book1.addPage(
+  "https://bestflagfootballplays.com/wp-content/uploads/Hail-Mary-Trips.jpg",
+  "Hail Mary",
+  "https://youtu.be/qyqCTMirNWg?t=289"
+);
+book1.addPage(
+  "https://www.dummies.com/wp-content/uploads/283523.image0.jpg",
+  "Handoff",
+  "https://youtu.be/qyqCTMirNWg?t=108"
+);
+book1.addPage(
+  "https://lh6.googleusercontent.com/-r311fMqwGdQ/TXHLNj4yb2I/AAAAAAAARAE/lVNOIrGbpPA/s1600/Boise+St.+Hook+and+Lateral+Play2.png",
+  "Lateral",
+  "https://youtu.be/qyqCTMirNWg?t=191"
+);
+book1.addPage(
+  "https://upload.wikimedia.org/wikipedia/commons/d/dc/Yost_tackle_over_lea.jpg",
+  "End Around",
+  "https://youtu.be/qyqCTMirNWg?t=211"
+);
 
 
 
