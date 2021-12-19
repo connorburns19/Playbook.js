@@ -296,6 +296,8 @@ FieldGenerator.prototype = {
 
 
 function PlayDisplayer(){
+  const fieldtop = document.createElement("div")
+  fieldtop.className = 'field-top'
   const field = document.createElement("div")
   const frontline = document.createElement("div")
   frontline.className = 'front'
@@ -423,7 +425,7 @@ function PlayDisplayer(){
   this.rtemove = []
 
 
-
+  
 
   $(playbutton).click(
     function () {
@@ -442,6 +444,12 @@ function PlayDisplayer(){
       animateinsequence(this.lhbmove, '#lhb')
       animateinsequence(this.fbmove, '#fb')
       animateinsequence(this.rhbmove, '#rhb')
+      
+      
+
+      
+
+      
      
       }
 
@@ -450,17 +458,22 @@ function PlayDisplayer(){
 
 
   $(resetbutton).click(function () {
-    $('#lte').removeAttr('style')
-    $('#lt').removeAttr('style')
-    $('#lg').removeAttr('style')
-    $('#c').removeAttr('style')
-    $('#rg').removeAttr('style')
-    $('#rt').removeAttr('style')
-    $('#rte').removeAttr('style')
-    $('#qb').removeAttr('style')
-    $('#lhb').removeAttr('style')
-    $('#fb').removeAttr('style')
-    $('#rhb').removeAttr('style')
+  
+  $('#lte').removeAttr('style')
+  $('#lt').removeAttr('style')
+  $('#lg').removeAttr('style')
+  $('#c').removeAttr('style')
+  $('#rg').removeAttr('style')
+  $('#rt').removeAttr('style')
+  $('#rte').removeAttr('style')
+  $('#qb').removeAttr('style')
+  $('#lhb').removeAttr('style')
+  $('#fb').removeAttr('style')
+  $('#rhb').removeAttr('style')
+  
+
+   
+    
 
 }
     
@@ -469,73 +482,327 @@ function PlayDisplayer(){
   );
 
   const body = $("body");
+  body.append(fieldtop)
   body.append(field)
+
+  function unhide(){
+    resetbutton.hidden = false;
+  }
+  function hide(){
+    resetbutton.hidden = true;
+    
+  }
 
 
 }
 
 PlayDisplayer.prototype = {
 
+  spawnSandbox: function (){
+    
+    const body = $('body')
+    
+    
+
+    const shell = document.createElement('div')
+    shell.className = 'sandbox'
+
+    const forms = document.createElement("forms2");
+    forms.className = "forms2";
+    forms.id = "sandboxform";
+    const LTE = document.createElement("select")
+    LTE.name = 'Left Tight End'
+    const LTElabel = document.createElement('label')
+    LTElabel.for = 'Left Tight End'
+    LTElabel.innerText = 'LTE: '
+    
+    const LT = document.createElement("select")
+    LT.name = 'Left Tackle'
+    const LTlabel = document.createElement('label')
+    LTlabel.for = 'Left Tackle'
+    LTlabel.innerText = 'LT: '
+    const LG = document.createElement("select")
+    LG.name = 'Left Guard'
+    const LGlabel = document.createElement('label')
+    LGlabel.for = 'Left Guard'
+    LGlabel.innerText = 'LG: '
+    const C = document.createElement("select")
+    C.name = 'Center'
+    const Clabel = document.createElement('label')
+    Clabel.for = 'Left Tight End'
+    Clabel.innerText = 'C: '
+    const RG = document.createElement("select")
+    RG.name = 'Right Guard'
+    const RGlabel = document.createElement('label')
+    RGlabel.for = 'Right Guard'
+    RGlabel.innerText = 'RG: '
+    const RT = document.createElement("select")
+    RT.name = 'Right Tackle'
+    const RTlabel = document.createElement('label')
+    RTlabel.for = 'Right Tackle'
+    RTlabel.innerText = 'RT: '
+    const RTE = document.createElement("select")
+    RTE.name = 'Right Tight End'
+    const RTElabel = document.createElement('label')
+    RTElabel.for = 'Right Tight End'
+    RTElabel.innerText = 'RTE: '
+    const QB = document.createElement("select")
+    QB.name = 'Quarterback'
+    const QBlabel = document.createElement('label')
+    QBlabel.for = 'Quarterback'
+    QBlabel.innerText = 'QB: '
+    const LHB = document.createElement("select")
+    LHB.name = 'Left Halfback'
+    const LHBlabel = document.createElement('label')
+    LHBlabel.for = 'Left Halfback'
+    LHBlabel.innerText = 'LHB: '
+    const FB = document.createElement("select")
+    FB.name = 'Fullback'
+    const FBlabel = document.createElement('label')
+    FBlabel.for = 'Fullback'
+    FBlabel.innerText = 'FB: '
+    const RHB = document.createElement("select")
+    RHB.name = 'Right Halfback'
+    const RHBlabel = document.createElement('label')
+    RHBlabel.for = 'Right Halfback'
+    RHBlabel.innerText = 'RHB: '
+
+    const moveslist = getValidMoveList()
+    
+    const all = [LTE, LT, LG, C, RG, RT, RTE, QB, LHB, FB, RHB]
+    for (let i = 0; i < all.length; i++){
+      let optdeafult = document.createElement('option')
+      optdeafult.value = 'none'
+      optdeafult.innerText = 'none'
+      all[i].append(optdeafult)
+      for (let j = 0; j < moveslist.length; j++){
+        let option = document.createElement('option')
+        option.value = moveslist[j].name
+        option.innerText = moveslist[j].name
+        all[i].append(option)
+
+      }
+      
+      
+      
+
+
+    }
+    forms.append(LTElabel)
+    forms.append(LTE)
+    forms.append(LTlabel)
+    forms.append(LT)
+    forms.append(LGlabel)
+    forms.append(LG)
+    forms.append(Clabel)
+    forms.append(C)
+    forms.append(RGlabel)
+    forms.append(RG)
+    forms.append(RTlabel)
+    forms.append(RT)
+    forms.append(RTElabel)
+    forms.append(RTE)
+    forms.append(QBlabel)
+    forms.append(QB)
+    forms.append(LHBlabel)
+    forms.append(LHB)
+    forms.append(FBlabel)
+    forms.append(FB)
+    forms.append(RHBlabel)
+    forms.append(RHB)
+
+    const submit = document.createElement("input");
+    submit.id = "confirmid";
+    submit.type = "submit";
+    submit.value = "Confirm";
+
+    forms.append(submit)
+    
+    shell.append(forms)
+
+    body.append(shell)
+
+    $(submit).click(
+      function (e) {
+        e.preventDefault();
+        this.setLTEMove(LTE.value)
+        this.setLTMove(LT.value)
+        this.setLGMove(LG.value)
+        this.setCMove(C.value)
+        this.setRGMove(RG.value)
+        this.setRTMove(RT.value)
+        this.setRTEMove(RTE.value)
+        this.setQBMove(QB.value)
+        this.setLHBMove(LHB.value)
+        this.setFBMove(FB.value)
+        this.setRHBMove(RHB.value)
+      }.bind(this)
+    );
+
+
+
+  },
+
   setLTEMove: function (move) {
     const newmove = generateMove(move)  
-    this.ltemove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.ltemove = []
+    }
+    else{
+      this.ltemove = newmove[0].steps
+
+    }
     
 
   },
   setLTMove: function (move) {
     const newmove = generateMove(move)
-    this.ltmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.ltmove = []
+    }
+    else{
+      this.ltmove = newmove[0].steps
+
+    }
     
   },
   setLGMove: function (move) {
     const newmove = generateMove(move)
-    this.lgmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.lgmove = []
+    }
+    else{
+      this.lgmove = newmove[0].steps
+
+    }
     
   },
   setCMove: function (move) {
     const newmove = generateMove(move)
-    this.cmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.cmove = []
+    }
+    else{
+      this.cmove = newmove[0].steps
+
+    }
     
   },
   setRGMove: function (move) {
     const newmove = generateMove(move)
-    this.rgmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.rgmove = []
+    }
+    else{
+      this.rgmove = newmove[0].steps
+
+    }
     
   },
   setRTMove: function (move) {
     const newmove = generateMove(move)
-    this.rtmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.rtmove = []
+    }
+    else{
+      this.rtmove = newmove[0].steps
+
+    }
     
   },
   setRTEMove: function (move) {
     const newmove = generateMove(move)
-    this.rtemove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.rtemove = []
+    }
+    else{
+      this.rtemove = newmove[0].steps
+
+    }
     
   },
   setQBMove: function (move) {
     const newmove = generateMove(move)
-    this.qbmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.qbmove = []
+    }
+    else{
+      this.qbmove = newmove[0].steps
+
+    }
     
   },
   setLHBMove: function (move) {
     const newmove = generateMove(move)
-    this.lhbmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.lhbmove = []
+    }
+    else{
+      this.lhbmove = newmove[0].steps
+
+    }
     
   },
   setFBMove: function (move) {
     const newmove = generateMove(move)
-    this.fbmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.fbmove = []
+    }
+    else{
+      this.fbmove = newmove[0].steps
+
+    }
     
   },
   setRHBMove: function (move) {
     const newmove = generateMove(move)
-    this.rhbmove = newmove[0].steps
+    if(newmove[0] == undefined){
+      this.rhbmove = []
+    }
+    else{
+      this.rhbmove = newmove[0].steps
+
+    }
+    
     
   }
 
 };
 
+function getValidMoveList(){
+  const straightdeep = {name: 'straight-deep', steps:[{name: 'straight-deep', obj: {bottom: 500}, speed: 1000}]}
+  const deepcutright = {name: 'deep-90-right', steps: [{name: 'straight-deep', obj: {bottom: 500}, speed: 1000}, {name:'right-cut', obj: {left: 400}, speed: 1000}]}
+  const midcutright = {name: 'mid-90-right', steps: [{name: 'straight-mid', obj: {bottom: 300}, speed: 1000}, {name:'right-cut', obj: {left: 400}, speed: 1000}]}
+  const shortcutright = {name: 'short-90-right', steps: [{name: 'straight-close', obj: {bottom: 200}, speed: 700}, {name:'right-cut', obj: {left: 400}, speed: 1000}]}
+  const deepcutleft = {name: 'deep-90-left', steps: [{name: 'straight-deep', obj: {bottom: 500}, speed: 1000}, {name:'left-cut', obj: {right: 400}, speed: 1000}] }
+  const midcutleft = {name: 'mid-90-left', steps: [{name: 'straight-mid', obj: {bottom: 300}, speed: 1000}, {name:'left-cut', obj: {right: 400}, speed: 1000}] }
+  const shortcutleft = {name: 'short-90-left', steps: [{name: 'straight-close', obj: {bottom: 200}, speed: 700}, {name:'right-cut', obj: {right: 400}, speed: 1000}] }
+  const holeonelhb = {name: 'hole-one-lhb', steps: [{name: 'hole-one-lhb', obj: {right: 250, bottom: 200}, speed: 900}]}
+  const holetwolhb = {name: 'hole-two-lhb', steps: [{name: 'hole-two-lhb', obj: {right: 150, bottom: 200}, speed: 900}]}
+  const holethreelhb = {name: 'hole-three-lhb', steps: [{name: 'hole-three-lhb', obj: {right: 25, bottom: 200}, speed: 900}]}
+  const holefourlhb = {name: 'hole-four-lhb', steps: [{name: 'hole-four-lhb', obj: {left: 30, bottom: 200}, speed: 900}]}
+  const holefiverhb = {name: 'hole-five-rhb', steps: [{name: 'hole-five-rhb', obj: {right: 30, bottom: 200}, speed: 900}]}
+  const holesixrhb = {name: 'hole-six-rhb', steps: [{name: 'hole-six-rhb', obj: {left: 30, bottom: 200}, speed: 900}]}
+  const holesevenrhb = {name: 'hole-seven-rhb', steps: [{name: 'hole-seven-rhb', obj: {left: 150, bottom: 200}, speed: 900}]}
+  const holeeightrhb = {name: 'hole-eight-rhb', steps: [{name: 'hole-eight-rhb', obj: {left: 250, bottom: 200}, speed: 900}]}
+  const qbhandoffleft = {name: 'hand-off-left-qb', steps: [{name: 'hand-off-left-qb', obj: {right: 50}, speed: 200}]}
+  const qbhandoffright = {name: 'hand-off-right-qb', steps: [{name: 'hand-off-right-qb', obj: {left: 50}, speed: 200}]}
+  const holeonefb = {name: 'hole-one-fb', steps: [{name: 'hole-one-fb', obj: {right: 375, bottom: 200}, speed: 900}]}
+  const holetwofb = {name: 'hole-two-fb', steps: [{name: 'hole-two-fb', obj: {right: 250, bottom: 200}, speed: 900}]}
+  const holethreefb = {name: 'hole-three-fb', steps: [{name: 'hole-three-fb', obj: {right: 150, bottom: 200}, speed: 900}]}
+  const holefourfb = {name: 'hole-four-fb', steps: [{name: 'hole-four-fb', obj: {right: 50, bottom: 200}, speed: 900}]}
+  const holefivefb = {name: 'hole-five-fb', steps: [{name: 'hole-five-fb', obj: {left: 50, bottom: 200}, speed: 900}]}
+  const holesixfb = {name: 'hole-six-fb', steps: [{name: 'hole-six-fb', obj: {left: 150, bottom: 200}, speed: 900}]}
+  const holesevenfb = {name: 'hole-seven-fb', steps: [{name: 'hole-seven-fb', obj: {left: 250, bottom: 200}, speed: 900}]}
+  const holeeightfb = {name: 'hole-eight-fb', steps: [{name: 'hole-eight-fb', obj: {left: 375, bottom: 200}, speed: 900}]}
+  const fallbackqb = {name: 'pass-qb', steps: [{name: 'pass-qb', obj: {top: 100}, speed: 1100}]}
 
+  const moveslist = [straightdeep, deepcutright, midcutright, shortcutright, 
+    deepcutleft, midcutleft, shortcutleft, holeonelhb, holetwolhb, holethreelhb, 
+    holefourlhb, holefiverhb, holesixrhb, holesevenrhb, holeeightrhb, qbhandoffleft, 
+    qbhandoffright, holeonefb, holetwofb, holethreefb, holefourfb, holefivefb, holesixfb, holesevenfb, holeeightfb, fallbackqb]
+  return moveslist
+}
 function generateMove(move){
   
   const straightdeep = {name: 'straight-deep', steps:[{name: 'straight-deep', obj: {bottom: 500}, speed: 1000}]}
@@ -563,7 +830,7 @@ function generateMove(move){
   const holesixfb = {name: 'hole-six-fb', steps: [{name: 'hole-six-fb', obj: {left: 150, bottom: 200}, speed: 900}]}
   const holesevenfb = {name: 'hole-seven-fb', steps: [{name: 'hole-seven-fb', obj: {left: 250, bottom: 200}, speed: 900}]}
   const holeeightfb = {name: 'hole-eight-fb', steps: [{name: 'hole-eight-fb', obj: {left: 375, bottom: 200}, speed: 900}]}
-  const fallbackqb = {name: 'pass-qb', steps: [{name: 'pass-qb', obj: {top: 120}, speed: 1100}]}
+  const fallbackqb = {name: 'pass-qb', steps: [{name: 'pass-qb', obj: {top: 100}, speed: 1100}]}
 
   const moveslist = [straightdeep, deepcutright, midcutright, shortcutright, 
     deepcutleft, midcutleft, shortcutleft, holeonelhb, holetwolhb, holethreelhb, 

@@ -73,6 +73,7 @@ text2.innerText =
   the developer can make a T formation. This could be useuful for the first use case; the coach could display the formation for the players\
   to see.";
 body.append(text2);
+text2.id = 'text'
 
 
 
@@ -85,4 +86,6 @@ field.setRTMove('short-90-left')
 // field.setRHBMove('hole-eight-rhb')
 field.setQBMove('pass-qb')
 field.setFBMove('hole-four-fb')
+
+field.spawnSandbox('text')
 
