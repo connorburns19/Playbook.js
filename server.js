@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   //    "<h1>Welcome to FbPlaybook Sample Page. go to https://fbplaybooksample.herokuapp.com/examples.html to see the library in action.</h1>"
     
   // );
-  res.sendFile(path.join(__dirname, "/landingpage.html")
+  res.sendFile(path.join(__dirname, "/landingpage.html"))
 });
 
 // Error codes
