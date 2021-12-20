@@ -986,9 +986,6 @@
       
       PlayDisplayer.prototype = {
       
-        connectPlaybook: function(playBook){
-          this.playBook = playBook
-        },
       
         spawnSandbox: function (edit, parentid){
           
