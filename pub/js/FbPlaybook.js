@@ -79,7 +79,7 @@
     if (size === 'xx-large'){
         const moveslist = getValidMoveList()
         const newmove = moveslist.filter(m => m.name === move)
-        console.log(newmove)
+        
     
         return newmove
         
@@ -163,18 +163,14 @@
               
       
               let lte = this.field.ltemove[0]
-              // console.log(lte).length
+              
               if (lte == undefined){
                 lte = 'none'
               }
-              // else if (lte.length > 1){
-              //   lte = this.field.ltename
-              // }
+              
               else{
                 lte = this.field.ltename
-                // lte = this.field.ltemove[0].name
-                // console.log(this.field.ltemove[0])
-                // console.log(lte)
+                
               }
       
       
@@ -242,7 +238,7 @@
                 fb = this.field.fbname
               }
               let rhb = this.field.rhbmove[0]
-              // console.log(rhb)
+              
               if (rhb == undefined){
                 rhb = 'none'
               }
@@ -252,7 +248,7 @@
               
       
               const list = [lte, lt, lg, c, rg, rt, rte, qb, lhb, fb, rhb]
-              console.log(list)
+              
               this.addPage('https://i.ibb.co/cbrDg02/grey.png', this.field.fieldtop.innerText, null, list)
       
               if (this.i === this.pages.length - 2) {
@@ -388,7 +384,7 @@
       }
       playBook.prototype = {
         addPage: function (image, title, link, movelist) {
-          console.log(movelist)
+          
           
           
           const newpage = document.createElement("div");
@@ -435,7 +431,7 @@
       
               this.field.fieldtop.innerText = title
               const lte = generateMove(movelist[0], this.field.size)[0]
-              // console.log(lte)
+              
               if (lte == undefined){
                 this.field.ltemove = []
               }
@@ -590,18 +586,14 @@
             function (e) {
               e.preventDefault();
               let lte = this.field.ltemove[0]
-              // console.log(lte).length
+             
               if (lte == undefined){
                 lte = 'none'
               }
-              // else if (lte.length > 1){
-              //   lte = this.field.ltename
-              // }
+              
               else{
                 lte = this.field.ltename
-                // lte = this.field.ltemove[0].name
-                // console.log(this.field.ltemove[0])
-                // console.log(lte)
+                
               }
       
       
@@ -669,7 +661,7 @@
                 fb = this.field.fbname
               }
               let rhb = this.field.rhbmove[0]
-              // console.log(rhb)
+              
               if (rhb == undefined){
                 rhb = 'none'
               }
@@ -679,14 +671,14 @@
               
       
               const list = [lte, lt, lg, c, rg, rt, rte, qb, lhb, fb, rhb]
-              console.log(list)
+              
               this.addPage(formimage.value, formtitle.value, formlink.value, list)
       
               if (this.i === this.pages.length - 2) {
                 this.page2.appendChild(this.pages[this.i + 1]);
               }
       
-              // this.addPage(formimage.value, formtitle.value, formlink.value);
+              
               if (this.i === this.pages.length - 2) {
                 this.page2.appendChild(this.pages[this.i + 1]);
               }
@@ -919,9 +911,7 @@
       
         $(playbutton).click(
           function () {
-            // console.log('success')
-            // console.log(this.lte)
-            // $('#lte').animate(lteanimate.obj, lteanimate.speed)
+            
             animateinsequence(this.ltemove, '#lte' + this.name)
             animateinsequence(this.ltmove, '#lt' + this.name)
             animateinsequence(this.lgmove, '#lg' + this.name)
@@ -976,16 +966,14 @@
         const body = $("body");
         
         if (parentid == undefined){
-          // body.append(fieldtop)
-          // body.append(field);
+          
           body.append(fullfield)
           
       
         }
         else{
           const par = document.getElementById(parentid)
-          // par.append(fieldtop)
-          // par.append(field)
+          
           par.append(fullfield)
         }
         
@@ -1005,9 +993,7 @@
         spawnSandbox: function (edit, parentid){
           
           const body = $('body')
-          // if (parentid != undefined){
-          //   body = $(parentid)[0]
-          // }
+          
           
           
       
@@ -1187,8 +1173,7 @@
           submit2.value = "Set Custom Name";
       
           formsaddcurrentplay.appendChild(formtitle);
-          // formsaddcurrentplay.appendChild(formimage);
-          // formsaddcurrentplay.appendChild(formlink);
+          
           formsaddcurrentplay.appendChild(submit2);
           if (edit){
             shell.append(formsaddcurrentplay)
