@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="js/FbPlaybook.css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src='js/FbPlaybook.js'></script>
+    <script defer type="text/javascript" src='js/landingpage.js'></script>
+
+</head>
+
+<body class="landing-page">
+
+
+    <div class='landing-sub-title'>
+        Documentation
+    </div>
+    <a class='documentaiton'>
+        <a href='https://fbplaybooksample.herokuapp.com/landingpage.html'>Return</a>
+
+        <div class='explanation-block'>
+            Put these script tags at top of html:
+
+        </div>
+
+        <div class='code'>
+            script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+
+        </div>
+        <div class='code'>
+
+            script defer src="FbPlaybook.js"
+        </div>
+        <div class='explanation-block'>
+            API table:
+        </div>
+        <table class='apitable'>
+            <tr>
+                <th>Method</th>
+                <th>Arguments</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>new playBook()</td>
+                <td>name: string, field: PlayDisplayerObject, abletosave: bool, parentid: string</td>
+                <td>Creates playBook object. Name needs to be unique. If creating playBook with no connection to field
+                    set field = null. parentid
+                    is deafult null and the object will be added to body if not specified</td>
+            </tr>
+            <tr>
+                <td>playBook().addpage()</td>
+                <td>imagelink: string, playname: string, videolink: string, moveslist: list of strings</td>
+                <td>Method to add page/play to playBook object. Moveslist is a list of valid moves for each player in
+                    the play. The order of the list is (LTE, LT LG, C, RB, RT, RTE, QB, LHB, FB, RHB). When set with a
+                    moveslist, the end user will be able to view the play animation if the book is connected to a
+                    playBook object.
+                    All arguments default to null.</td>
+            </tr>
+            <tr>
+                <td>playBook().allowUserCreatePlays()</td>
+                <td>parentid: string</td>
+                <td>Method that spawns a box which allows the end user to add plays to the playBook. If the playBook is
+                    connected to a PlayDisplayer, it will take the animations from there and store them in the book as
+                    well. parentid defaults null and if not specified object will be added to body</td>
+            </tr>
+            <tr>
+                <td>new PlayDisplayer()</td>
+                <td>size: string, name: string, parentid: string</td>
+                <td>Method that creates a PlayDisplayer (field) object which can be used to show animations. Must
+                    spercify unqique name and a size. The only sizes available are 'large' and 'xx-large'</td>
+            </tr>
+
+            <tr>
+                <td>PlayDisplayer().setLTEMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Left Tight End. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setLTMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Left Tackle. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setLGMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Left Guard. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setCMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Center. Move must be a string from the valid move
+                    list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setRGMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Right Guard. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setRTMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Right Tackle. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setRTEMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Right Tight End. Move must be a string from the
+                    valid move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setQBMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Quarterback. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setLHBMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Left Halfback. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setLTEMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Fullback. Move must be a string from the valid move
+                    list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().setLTEMove</td>
+                <td>size: movename: string</td>
+                <td>Method that sets the starting animation for the Right Halfback. Move must be a string from the valid
+                    move list (see below)</td>
+            </tr>
+            <tr>
+                <td>PlayDisplayer().spawnSandbox()</td>
+                <td>save: bool, parentid: string</td>
+                <td>Method that spawns a dropdown menu to allow the end user to view their own custom animations. When
+                    connected to a playBook object, set save to true
+                    when you want the end user to be able to add their plays they create to the playBook. Otherwise, set
+                    it to false or null. parentid defaults to null and the object will be added to the body if not
+                    specified.
+                </td>
+            </tr>
+        </table>
+        <div class='explanation-block'>
+            Valid Moves:
+
+        </div>
+        <table>
+            <th>String</th>
+            <tr>
+                <td>'none'</td>
+            </tr>
+            <tr>
+                <td>'deep-90-right'</td>
+            </tr>
+            <tr>
+                <td> 'mid-90-right'</td>
+            </tr>
+            <tr>
+                <td>short-90-right</td>
+            </tr>
+            <tr>
+                <td> 'straight-deep'</td>
+            </tr>
+            <tr>
+                <td>'deep-90-left'</td>
+            </tr>
+            <tr>
+                <td>'mid-90-left'</td>
+            </tr>
+            <tr>
+                <td>'short-90-left</td>
+            </tr>
+            <tr>
+                <td>'hole-one-lhb'</td>
+            </tr>
+            <tr>
+                <td>'hole-two-lhb'</td>
+            </tr>
+            <tr>
+                <td>'hole-three-lhb'</td>
+            </tr>
+            <tr>
+                <td>'hole-four-lhb'</td>
+            </tr>
+            <tr>
+                <td>'hole-five-rhb'</td>
+            </tr>
+            <tr>
+                <td>
+                    'hole-six-rhb'
+                </td>
+            </tr>
+            <tr>
+                <td>'hole-seven-rhb'</td>
+            </tr>
+            <tr>
+                <td>'hole-eight-rhb'</td>
+            </tr>
+            <tr>
+                <td>'hand-off-left-qb'</td>
+            </tr>
+            <tr>
+                <td>'hand-off-right-qb'</td>
+            </tr>
+            <tr>
+                <td>'pass-qb'</td>
+            </tr>
+            <tr>
+                <td>'hole-one-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-two-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-three-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-four-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-five-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-six-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-seven-fb'</td>
+            </tr>
+            <tr>
+                <td>'hole-eight-fb'</td>
+            </tr>
+
+
+        </table>
+
+</body>
+
+</html>
