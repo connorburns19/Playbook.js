@@ -4,9 +4,9 @@ https://fbplaybooksample.herokuapp.com/landingpage.html
 
 https://fbplaybooksample.herokuapp.com/documentation.html
 
-# Getting started
-link rel="stylesheet" href="js/FbPlaybook.css"
-script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+# Getting started/tags
+link rel="stylesheet" href="js/FbPlaybook.css" <br/>
+script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" <br/>
 script defer type="text/javascript" type="text/javascript" src='js/FbPlaybook.js'
 
 # Sample creating a book that is connected to a PlayDisplayer Object:
